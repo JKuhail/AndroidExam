@@ -1,4 +1,4 @@
-package com.jkuhail.androidexam.fragments
+package com.jkuhail.androidexam.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.jkuhail.androidexam.*
-import com.jkuhail.androidexam.adapters.MainAdapter
+import com.jkuhail.androidexam.adapter.MainAdapter
 import com.jkuhail.androidexam.databinding.FragmentFeedBinding
-import com.jkuhail.androidexam.models.Item
+import com.jkuhail.androidexam.model.Item
 
 class FeedFragment : Fragment(), MainAdapter.EventListener {
     private lateinit var binding: FragmentFeedBinding

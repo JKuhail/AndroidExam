@@ -1,4 +1,4 @@
-package com.jkuhail.androidexam.models
+package com.jkuhail.androidexam.model
 
 import androidx.annotation.DrawableRes
 

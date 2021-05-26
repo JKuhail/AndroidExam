@@ -1,4 +1,4 @@
-package com.jkuhail.androidexam.activities
+package com.jkuhail.androidexam.activitiy
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,10 +9,10 @@ import androidx.fragment.app.FragmentTransaction
 import com.jkuhail.androidexam.R
 
 import com.jkuhail.androidexam.databinding.ActivityMainBinding
-import com.jkuhail.androidexam.fragments.DoingGoodFragment
-import com.jkuhail.androidexam.fragments.FeedFragment
-import com.jkuhail.androidexam.fragments.PreziFragment
-import com.jkuhail.androidexam.fragments.ProfileFragment
+import com.jkuhail.androidexam.fragment.DoingGoodFragment
+import com.jkuhail.androidexam.fragment.FeedFragment
+import com.jkuhail.androidexam.fragment.PreziFragment
+import com.jkuhail.androidexam.fragment.ProfileFragment
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 

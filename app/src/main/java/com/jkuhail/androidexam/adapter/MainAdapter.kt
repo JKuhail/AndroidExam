@@ -1,4 +1,4 @@
-package com.jkuhail.androidexam.adapters
+package com.jkuhail.androidexam.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.github.islamkhsh.CardSliderAdapter
 import com.jkuhail.androidexam.R
-import com.jkuhail.androidexam.models.Item
+import com.jkuhail.androidexam.model.Item
 
 class MainAdapter(
     private val mContext: Context,

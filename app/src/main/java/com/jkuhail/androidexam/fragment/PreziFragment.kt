@@ -1,24 +1,22 @@
-package com.jkuhail.androidexam.fragments
+package com.jkuhail.androidexam.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.jkuhail.androidexam.R
-import com.jkuhail.androidexam.databinding.FragmentDoingGoodBinding
+import com.jkuhail.androidexam.databinding.FragmentPreziBinding
 
 
-class DoingGoodFragment : Fragment() {
-
-    private lateinit var binding: FragmentDoingGoodBinding
+class PreziFragment : Fragment() {
+    private lateinit var binding: FragmentPreziBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentDoingGoodBinding.inflate(inflater, container, false)
+        binding = FragmentPreziBinding.inflate(inflater, container, false)
 
         return binding.root
     }

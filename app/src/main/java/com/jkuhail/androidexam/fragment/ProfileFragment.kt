@@ -1,11 +1,10 @@
-package com.jkuhail.androidexam.fragments
+package com.jkuhail.androidexam.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.jkuhail.androidexam.R
 import com.jkuhail.androidexam.databinding.FragmentProfileBinding
 
 
