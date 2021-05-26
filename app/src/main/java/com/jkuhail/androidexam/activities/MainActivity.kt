@@ -14,7 +14,7 @@ import com.jkuhail.androidexam.fragments.FeedFragment
 import com.jkuhail.androidexam.fragments.PreziFragment
 import com.jkuhail.androidexam.fragments.ProfileFragment
 
-class MainActivity : AppCompatActivity(), View.OnClickListener{
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        starter()
+        selectFeed()
 
         binding.layoutFeed.setOnClickListener(this)
         binding.layoutMyPrezi.setOnClickListener(this)
@@ -33,26 +33,50 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
 
     }
 
-    private fun starter(){
-        binding.feedTv.setTextColor(ContextCompat.getColor(applicationContext, R.color.colorAccent))
-        binding.feedImg.setColorFilter(ContextCompat.getColor(applicationContext, R.color.colorAccent))
-        binding.lineFeed.visibility = View.VISIBLE
-        replaceFragment(FeedFragment())
-    }
 
-    private fun resetBottomSheet() {
+    private fun refreshNavigationBar() {
         binding.feedTv.setTextColor(ContextCompat.getColor(applicationContext, R.color.grey_color))
-        binding.feedImg.setColorFilter(ContextCompat.getColor(applicationContext, R.color.grey_color))
-        binding.lineFeed.visibility = View.INVISIBLE
-        binding.myPreziTv.setTextColor(ContextCompat.getColor(applicationContext, R.color.grey_color))
-        binding.myPreziImg.setColorFilter(ContextCompat.getColor(applicationContext, R.color.grey_color))
-        binding.lineMyPrezi.visibility = View.INVISIBLE
+        binding.feedImg.setColorFilter(
+            ContextCompat.getColor(
+                applicationContext,
+                R.color.grey_color
+            )
+        )
+        binding.line1.visibility = View.INVISIBLE
+        binding.myPreziTv.setTextColor(
+            ContextCompat.getColor(
+                applicationContext,
+                R.color.grey_color
+            )
+        )
+        binding.myPreziImg.setColorFilter(
+            ContextCompat.getColor(
+                applicationContext,
+                R.color.grey_color
+            )
+        )
+        binding.line2.visibility = View.INVISIBLE
         binding.goodTv.setTextColor(ContextCompat.getColor(applicationContext, R.color.grey_color))
-        binding.goodImg.setColorFilter(ContextCompat.getColor(applicationContext, R.color.grey_color))
-        binding.lineGood.visibility = View.INVISIBLE
-        binding.profileTv.setTextColor(ContextCompat.getColor(applicationContext, R.color.grey_color))
-        binding.profileImg.setColorFilter(ContextCompat.getColor(applicationContext, R.color.grey_color))
-        binding.lineProfile.visibility = View.INVISIBLE
+        binding.goodImg.setColorFilter(
+            ContextCompat.getColor(
+                applicationContext,
+                R.color.grey_color
+            )
+        )
+        binding.line3.visibility = View.INVISIBLE
+        binding.profileTv.setTextColor(
+            ContextCompat.getColor(
+                applicationContext,
+                R.color.grey_color
+            )
+        )
+        binding.profileImg.setColorFilter(
+            ContextCompat.getColor(
+                applicationContext,
+                R.color.grey_color
+            )
+        )
+        binding.line4.visibility = View.INVISIBLE
     }
 
     private fun replaceFragment(fragment: Fragment?) {
@@ -61,35 +85,81 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         transaction.replace(R.id.container, fragment!!).commit()
     }
 
+    private fun selectFeed() {
+        refreshNavigationBar()
+        binding.feedTv.setTextColor(ContextCompat.getColor(applicationContext, R.color.colorAccent))
+        binding.feedImg.setColorFilter(
+            ContextCompat.getColor(
+                applicationContext,
+                R.color.colorAccent
+            )
+        )
+        binding.line1.visibility = View.VISIBLE
+        replaceFragment(FeedFragment())
+    }
+
+    private fun selectPrezi() {
+        refreshNavigationBar()
+        binding.myPreziTv.setTextColor(
+            ContextCompat.getColor(
+                applicationContext,
+                R.color.colorAccent
+            )
+        )
+        binding.myPreziImg.setColorFilter(
+            ContextCompat.getColor(
+                applicationContext,
+                R.color.colorAccent
+            )
+        )
+        binding.line2.visibility = View.VISIBLE
+        replaceFragment(PreziFragment())
+    }
+
+    private fun selectGoodToKnow() {
+        refreshNavigationBar()
+        binding.goodTv.setTextColor(ContextCompat.getColor(applicationContext, R.color.colorAccent))
+        binding.goodImg.setColorFilter(
+            ContextCompat.getColor(
+                applicationContext,
+                R.color.colorAccent
+            )
+        )
+        binding.line3.visibility = View.VISIBLE
+        replaceFragment(DoingGoodFragment())
+    }
+
+    private fun selectProfile() {
+        refreshNavigationBar()
+        binding.profileTv.setTextColor(
+            ContextCompat.getColor(
+                applicationContext,
+                R.color.colorAccent
+            )
+        )
+        binding.profileImg.setColorFilter(
+            ContextCompat.getColor(
+                applicationContext,
+                R.color.colorAccent
+            )
+        )
+        binding.line4.visibility = View.VISIBLE
+        replaceFragment(ProfileFragment())
+    }
+
     override fun onClick(v: View?) {
-        when(v!!.id){
-            R.id.layoutFeed ->{
-                resetBottomSheet()
-                binding.feedTv.setTextColor(ContextCompat.getColor(applicationContext, R.color.colorAccent))
-                binding.feedImg.setColorFilter(ContextCompat.getColor(applicationContext, R.color.colorAccent))
-                binding.lineFeed.visibility = View.VISIBLE
-                replaceFragment(FeedFragment())
+        when (v!!.id) {
+            R.id.layoutFeed -> {
+                selectFeed()
             }
-            R.id.layoutMyPrezi ->{
-                resetBottomSheet()
-                binding.myPreziTv.setTextColor(ContextCompat.getColor(applicationContext, R.color.colorAccent))
-                binding.myPreziImg.setColorFilter(ContextCompat.getColor(applicationContext, R.color.colorAccent))
-                binding.lineMyPrezi.visibility = View.VISIBLE
-                replaceFragment(PreziFragment())
+            R.id.layoutMyPrezi -> {
+                selectPrezi()
             }
-            R.id.layoutGood ->{
-                resetBottomSheet()
-                binding.goodTv.setTextColor(ContextCompat.getColor(applicationContext, R.color.colorAccent))
-                binding.goodImg.setColorFilter(ContextCompat.getColor(applicationContext, R.color.colorAccent))
-                binding.lineGood.visibility = View.VISIBLE
-                replaceFragment(DoingGoodFragment())
+            R.id.layoutGood -> {
+                selectGoodToKnow()
             }
-            R.id.layoutProfile ->{
-                resetBottomSheet()
-                binding.profileTv.setTextColor(ContextCompat.getColor(applicationContext, R.color.colorAccent))
-                binding.profileImg.setColorFilter(ContextCompat.getColor(applicationContext, R.color.colorAccent))
-                binding.lineProfile.visibility = View.VISIBLE
-                replaceFragment(ProfileFragment())
+            R.id.layoutProfile -> {
+                selectProfile()
             }
         }
     }

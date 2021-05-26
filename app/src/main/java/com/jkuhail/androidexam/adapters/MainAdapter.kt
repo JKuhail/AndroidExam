@@ -39,7 +39,7 @@ class MainAdapter(
             .into(img)
         description.text = mItems[position].content
         title.text = mItems[position].title
-        holder.itemView.setOnTouchListener { v: View?, event: MotionEvent? ->
+        holder.itemView.setOnTouchListener { _: View?, _: MotionEvent? ->
             listener.onSlide()
             false
         }

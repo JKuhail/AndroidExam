@@ -54,7 +54,7 @@
                     android:layout_marginTop="7dp"/>
             </LinearLayout>
             <View
-                android:id="@+id/lineProfile"
+                android:id="@+id/line4"
                 android:layout_width="match_parent"
                 android:layout_height="4dp"
                 android:visibility="invisible"
@@ -94,7 +94,7 @@
                     android:layout_marginTop="7dp"/>
             </LinearLayout>
             <View
-                android:id="@+id/lineGood"
+                android:id="@+id/line3"
                 android:layout_width="match_parent"
                 android:layout_height="4dp"
                 android:visibility="invisible"
@@ -139,7 +139,7 @@
                     android:layout_marginTop="7dp"/>
             </LinearLayout>
             <View
-                android:id="@+id/lineMyPrezi"
+                android:id="@+id/line2"
                 android:layout_width="match_parent"
                 android:layout_height="4dp"
                 android:visibility="invisible"
@@ -179,7 +179,7 @@
                     android:layout_marginTop="7dp"/>
             </LinearLayout>
             <View
-                android:id="@+id/lineFeed"
+                android:id="@+id/line1"
                 android:layout_width="match_parent"
                 android:layout_height="4dp"
                 android:visibility="invisible"
