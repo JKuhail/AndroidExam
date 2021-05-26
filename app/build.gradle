@@ -47,11 +47,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     //glide
     implementation "com.github.bumptech.glide:glide:$version_glide"
-    // Navigation
-    implementation "androidx.navigation:navigation-fragment-ktx:$version_navigation"
-    implementation "androidx.navigation:navigation-ui-ktx:$version_navigation"
-
-    //design
+    //customViewpager
     implementation 'com.github.IslamKhSh:CardSlider:1.0.1'
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'

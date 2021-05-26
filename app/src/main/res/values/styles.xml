@@ -7,7 +7,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <!-- increase the vertical padding of the navigation drawer's items (default is 48dp)-->
         <item name="listPreferredItemHeightSmall">54dp</item>
-        <item name="colorControlHighlight">@color/colorPrimaryDark</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
