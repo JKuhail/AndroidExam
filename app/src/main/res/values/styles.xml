@@ -1,0 +1,74 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- increase the vertical padding of the navigation drawer's items (default is 48dp)-->
+        <item name="listPreferredItemHeightSmall">54dp</item>
+        <item name="colorControlHighlight">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Style for LoginActivity, SignUpActivity, and ForgetPasswordActivity-->
+    <style name="AppTheme.MaterialNoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorOnSurface">#7f8c8d</item>
+<!--        <item name="materialButtonStyle">@style/My.Button</item>-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBarOverlay">true</item>
+    </style>
+
+<!--    <style name="My.Button" parent="@style/Widget.MaterialComponents.Button">-->
+<!--        <item name="backgroundTint">@color/button_selector</item>-->
+<!--        ...-->
+<!--    </style>-->
+
+    <style name="CustomCardViewStyle" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners</item>
+    </style>
+
+
+    <style name="ShapeAppearanceOverlay_card_custom_corners" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomRight">50dp</item>
+        <item name="cornerSizeBottomLeft">50dp</item>
+    </style>
+
+
+    <!-- Toolbar background-->
+    <style name="ToolbarHeader">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="Widget.BottomNavigationView"
+        parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/gotham_medium</item>
+    </style>
+
+<!--    <style name="NavigationViewItemFont" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/avenir_bold</item>
+    </style>-->
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+<!--    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:fontFamily">@font/avenir_bold</item>
+    </style>-->
+
+
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+</resources>
