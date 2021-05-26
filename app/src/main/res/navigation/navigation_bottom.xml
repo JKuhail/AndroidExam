@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/feedFragment">
+
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.jkuhail.androidexam.fragments.FeedFragment"
+        android:label="fragment_feed"
+        tools:layout="@layout/fragment_feed" >
+        <action
+            android:id="@+id/action_feedFragment_to_preziFragment"
+            app:destination="@id/preziFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/preziFragment"
+        android:name="com.jkuhail.androidexam.fragments.PreziFragment"
+        android:label="fragment_prezi"
+        tools:layout="@layout/fragment_prezi" >
+        <action
+            android:id="@+id/action_preziFragment_to_doingGoodFragment"
+            app:destination="@id/doingGoodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doingGoodFragment"
+        android:name="com.jkuhail.androidexam.fragments.DoingGoodFragment"
+        android:label="fragment_doing_good"
+        tools:layout="@layout/fragment_doing_good" >
+        <action
+            android:id="@+id/action_doingGoodFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.jkuhail.androidexam.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

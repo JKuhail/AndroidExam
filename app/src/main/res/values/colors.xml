@@ -4,16 +4,6 @@
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#f40009</color>
 
-    <color name="background_color">#F7F7FB</color>
-
-    <color name="text_color1">#7D8699</color>
-    <color name="text_color2">#575757</color>
-    <color name="text_color3">#9F9F9F</color>
-
-    <color name="gradient_1">#FD5585</color>
-    <color name="gradient_2">#FFC796</color>
-
-    <color name="borders_color">#E0E0E0</color>
-    <color name="checkbox_borders_color">#C1C1C1</color>
+    <color name="color_unchecked">#b4b4b4</color>
 
 </resources>

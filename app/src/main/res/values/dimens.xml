@@ -11,7 +11,10 @@
     <dimen name="layout_extra_large_margin">32dp</dimen>
     <dimen name="elements_height">50dp</dimen>
 
-    <dimen name="design_fab_image_size" tools:override="true">20dp</dimen>
+    <dimen name="design_fab_image_size" tools:override="true">56dp</dimen>
+
+    <dimen name="viewpager_next_item_visible">26dp</dimen>
+    <dimen name="viewpager_current_item_horizontal_margin">42dp</dimen>
 
 
 </resources>

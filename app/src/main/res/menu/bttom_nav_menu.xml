@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/feed"
+        android:title="@string/feed"
+        android:icon="@drawable/ic_feed"/>
+
+    <item
+        android:id="@+id/prezi"
+        android:title="@string/my_prezi"
+        android:icon="@drawable/ic_prezi"/>
+
+    <item
+        android:id="@+id/miPlaceholder"
+        android:title=""/>
+
+    <item
+        android:id="@+id/doing_good"
+        android:title="@string/doing_good"
+        android:icon="@drawable/ic_doing_good"/>
+
+
+    <item
+        android:id="@+id/profile"
+        android:title="@string/profile"
+        android:icon="@drawable/ic_profile"/>
+
+</menu>
