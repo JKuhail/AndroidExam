@@ -6,16 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.jkuhail.androidexam.*
-import com.jkuhail.androidexam.adapters.CardAdapter
+import com.jkuhail.androidexam.adapters.MainAdapter
 import com.jkuhail.androidexam.databinding.FragmentFeedBinding
 import com.jkuhail.androidexam.models.Item
 
-class FeedFragment : Fragment(), CardAdapter.EventListener {
+class FeedFragment : Fragment(), MainAdapter.EventListener {
     private lateinit var binding: FragmentFeedBinding
 
 
     private var items: ArrayList<Item> = ArrayList()
-    private lateinit var adapter: CardAdapter
+    private lateinit var adapter: MainAdapter
 
 
     override fun onCreateView(
@@ -66,7 +66,7 @@ class FeedFragment : Fragment(), CardAdapter.EventListener {
 
     private fun init() {
         adapter =
-            CardAdapter(context, items, this)
+            MainAdapter(requireContext(), items, this)
         binding.viewPager.adapter = adapter
         binding.viewPager.currentItem = 1
     }
