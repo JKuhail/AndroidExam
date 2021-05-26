@@ -79,16 +79,22 @@
         app:layout_constraintTop_toTopOf="@+id/imageView5"
         android:text="2" />
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/view_pager"
+    <com.github.islamkhsh.CardSliderViewPager
         android:layout_width="match_parent"
         android:layout_height="548dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="8dp"
-        android:clipToPadding="false"
+        android:layoutDirection="locale"
+        android:id="@+id/viewPager"
+        app:cardSlider_smallScaleFactor="0.82"
+        app:cardSlider_otherPagesWidth="30dp"
+        app:cardSlider_pageMargin="0dp"
+        app:cardSlider_baseShadow="3dp"
+        app:auto_slide_time="200"
+        android:layout_marginTop="22dp"
+        android:layout_marginBottom="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
 
 
 

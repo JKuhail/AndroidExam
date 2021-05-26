@@ -6,22 +6,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
+import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.bumptech.glide.Glide
 import com.jkuhail.androidexam.*
 import com.jkuhail.androidexam.databinding.FragmentFeedBinding
 
-
-class FeedFragment : Fragment() {
+class FeedFragment : Fragment(), CardAdapter.EventListener {
     private lateinit var binding: FragmentFeedBinding
-    private var nextItemVisiblePx = 0f
-    private  var currentItemHorizontalMarginPx: Float = 0f
-    private  var pageTranslationX: Float = 0F
-    private var pageTransformer: ViewPager2.PageTransformer? = null
-    private var horizontalMarginItemDecoration: HorizontalMarginItemDecoration? = null
+
 
     private var items: ArrayList<Item> = ArrayList()
-    private lateinit var adapter: BaseAdapter<Item>
+    private lateinit var adapter: CardAdapter
 
 
     override fun onCreateView(
@@ -33,12 +30,12 @@ class FeedFragment : Fragment() {
 
         init()
         addItems()
-        adapterSetup()
+
 
         return binding.root
     }
 
-    private fun adapterSetup(){
+/*    private fun adapterSetup(){
         adapter = object : BaseAdapter<Item>(context, items){
             override fun setViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
                 val view: View =
@@ -47,6 +44,7 @@ class FeedFragment : Fragment() {
                         parent,
                         false
                     )
+                view.rotationY = 180F
                 return ItemHolder(context, view)
             }
 
@@ -57,23 +55,50 @@ class FeedFragment : Fragment() {
                 viewHolder.content!!.text = value.content
             }
         }
+
         binding.viewPager.adapter = adapter
+    }*/
+
+    private fun addItems() {
+        items.add(
+            Item(
+                R.drawable.suicide_squad_poster_deadshot_1,
+                "כמה אתם מבינים בסרטים?",
+                "גלו כמה אתם בעלי הבנה בתחום"
+            )
+        )
+        items.add(
+            Item(
+                R.drawable.suicide_squad_poster_deadshot_1,
+                "כמה אתם מבינים בסרטים?",
+                "גלו כמה אתם בעלי הבנה בתחום"
+            )
+        )
+        items.add(
+            Item(
+                R.drawable.suicide_squad_poster_deadshot_1,
+                "כמה אתם מבינים בסרטים?",
+                "גלו כמה אתם בעלי הבנה בתחום"
+            )
+        )
     }
 
-    private fun addItems(){
-        items.add(Item(R.drawable.suicide_squad_poster_deadshot_1,
-            "כמה אתם מבינים בסרטים?",
-            "גלו כמה אתם בעלי הבנה בתחום"))
-        items.add(Item(R.drawable.suicide_squad_poster_deadshot_1,
-            "כמה אתם מבינים בסרטים?",
-            "גלו כמה אתם בעלי הבנה בתחום"))
-        items.add(Item(R.drawable.suicide_squad_poster_deadshot_1,
-            "כמה אתם מבינים בסרטים?",
-            "גלו כמה אתם בעלי הבנה בתחום"))
+    override fun onSlide() {
+        if (binding.viewPager.currentItem >= items.size - 2 && items.size > 2) {
+            items.addAll(items)
+            binding.viewPager.adapter!!.notifyDataSetChanged()
+        }
     }
 
     private fun init() {
+        adapter = CardAdapter(context, items, this)
+        binding.viewPager.adapter = adapter
+        binding.viewPager.currentItem = 1
+    }
 
+/*    private fun init() {
+        var currentPage = 0
+        binding.viewPager.rotationY = 180F; //enable RTL swiping
         binding.viewPager.offscreenPageLimit = 3
         binding.viewPager.clipToPadding = false
         binding.viewPager.clipChildren = false
@@ -81,14 +106,11 @@ class FeedFragment : Fragment() {
         currentItemHorizontalMarginPx =
             resources.getDimension(R.dimen.viewpager_current_item_horizontal_margin)
         pageTranslationX = nextItemVisiblePx + currentItemHorizontalMarginPx
-        pageTransformer = ViewPager2.PageTransformer { page: View, position: Float ->
-            page.translationX = pageTranslationX * position
+        val pageTransformer = ViewPager2.PageTransformer { page: View, position: Float ->
+            page.translationX = -pageTranslationX * position
             // Next line scales the item's height. You can remove it if you don't want this effect
-            page.scaleY = 1 - 0.25f * kotlin.math.abs(position)
-            //fading effect:
-            page.alpha = 0.25f + (1 - kotlin.math.abs(position))
+            page.scaleY = 1 - (0.25f * kotlin.math.abs(position))
         }
-
         binding.viewPager.setPageTransformer(pageTransformer)
         // The ItemDecoration gives the current (centered) item horizontal margin so that
         // it doesn't occupy the whole screen width. Without it the items overlap
@@ -97,7 +119,25 @@ class FeedFragment : Fragment() {
             R.dimen.viewpager_current_item_horizontal_margin
         )
         binding.viewPager.addItemDecoration(horizontalMarginItemDecoration!!)
-    }
+        binding.viewPager.registerOnPageChangeCallback(object : OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                currentPage = position
+            }
+            override fun onPageScrollStateChanged(
+                state: Int
+            ) {
+                if (state == ViewPager.SCROLL_STATE_IDLE) {
+                    val pageCount: Int = items.size
+                    if (currentPage == 0) {
+                        binding.viewPager.setCurrentItem(pageCount - 2, false)
+                    } else if (currentPage == pageCount - 1) {
+                        binding.viewPager.setCurrentItem(1, false)
+                    }
+                }
+            }
+        })
+
+    }*/
 
 
 }

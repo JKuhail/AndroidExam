@@ -5,5 +5,7 @@
     <color name="colorAccent">#f40009</color>
 
     <color name="color_unchecked">#b4b4b4</color>
+    <color name="grey_color">#b4b4b4</color>
+    <color name="grayb4">#b4b4b4</color>
 
 </resources>
