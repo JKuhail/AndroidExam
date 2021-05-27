@@ -49,7 +49,7 @@
             app:contentInsetStart="0dp"
             app:elevation="16dp"
             app:fabCradleMargin="10dp"
-            app:fabCradleRoundedCornerRadius="50dp">
+            app:fabCradleRoundedCornerRadius="40dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout"
@@ -57,6 +57,9 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:theme="@style/Widget.BottomNavigationView"
+                    app:itemTextAppearanceActive="@style/text_gray_9"
+                    app:itemTextAppearanceInactive="@style/text_gray_9"
                     android:clickable="true"
                     android:focusable="true"
                     android:id="@+id/bottomNavigationView"
