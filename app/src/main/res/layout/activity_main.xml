@@ -1,204 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
-    tools:context=".activitiy.MainActivity">
+    android:layoutDirection="rtl"
+    android:background="@drawable/gradient_background">
 
-    <FrameLayout
-        android:id="@+id/container"
-        android:layout_width="match_parent"
+
+    <fragment
+        android:id="@+id/nav_host_fragment_bottom"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/bottom_bar"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:orientation="horizontal"
-        android:background="#272727"
-        android:elevation="10dp"
-        app:layout_constraintBottom_toBottomOf="parent">
-        <LinearLayout
-            android:id="@+id/layoutProfile"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:background="?actionBarItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical"
-                tools:ignore="NestedWeights">
-                <ImageView
-                    android:id="@+id/profileImg"
-                    android:layout_width="15dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_profile"
-                    app:tint="@color/grey_color"/>
-                <TextView
-                    android:id="@+id/profileTv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/profile"
-                    style="@style/text_gray_9"
-                    android:gravity="center"
-                    android:layout_marginTop="7dp"/>
-            </LinearLayout>
-            <View
-                android:id="@+id/line4"
-                android:layout_width="match_parent"
-                android:layout_height="4dp"
-                android:visibility="invisible"
-                android:background="@drawable/red_line"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/navigation_bottom" />
 
 
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/layoutGood"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:background="?actionBarItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical"
-                tools:ignore="NestedWeights">
-                <ImageView
-                    android:id="@+id/goodImg"
-                    android:layout_width="19dp"
-                    android:layout_height="22dp"
-                    android:src="@drawable/ic_doing_good"
-                    app:tint="@color/grey_color"/>
-                <TextView
-                    android:id="@+id/goodTv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/doing_good"
-                    style="@style/text_gray_9"
-                    android:gravity="center"
-                    android:layout_marginTop="7dp"/>
-            </LinearLayout>
-            <View
-                android:id="@+id/line3"
-                android:layout_width="match_parent"
-                android:layout_height="4dp"
-                android:visibility="invisible"
-                android:background="@drawable/red_line"/>
-
-
-        </LinearLayout>
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="34dp"
-            android:src="@drawable/crop"
-            android:elevation="11dp"/>
-        <LinearLayout
-            android:id="@+id/layoutMyPrezi"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:background="?actionBarItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical"
-                tools:ignore="NestedWeights">
-                <ImageView
-                    android:id="@+id/myPreziImg"
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
-                    android:src="@drawable/ic_prezi"
-                    app:tint="@color/grey_color"/>
-                <TextView
-                    android:id="@+id/myPreziTv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/my_prezi"
-                    style="@style/text_gray_9"
-                    android:gravity="center"
-                    android:layout_marginTop="7dp"/>
-            </LinearLayout>
-            <View
-                android:id="@+id/line2"
-                android:layout_width="match_parent"
-                android:layout_height="4dp"
-                android:visibility="invisible"
-                android:background="@drawable/red_line"/>
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/layoutFeed"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:background="?actionBarItemBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical"
-                tools:ignore="NestedWeights">
-                <ImageView
-                    android:id="@+id/feedImg"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_feed"
-                    app:tint="@color/grey_color"/>
-                <TextView
-                    android:id="@+id/feedTv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/feed"
-                    style="@style/text_gray_9"
-                    android:gravity="center"
-                    android:layout_marginTop="7dp"/>
-            </LinearLayout>
-            <View
-                android:id="@+id/line1"
-                android:layout_width="match_parent"
-                android:layout_height="4dp"
-                android:visibility="invisible"
-                android:background="@drawable/red_line"/>
-
-
-        </LinearLayout>
-    </LinearLayout>
     <ImageView
         android:id="@+id/mainBtn"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:src="@drawable/bottom_bar_fab"
+        android:layout_marginBottom="39dp"
         android:background="?actionBarItemBackground"
         android:clickable="true"
+        android:elevation="11dp"
         android:focusable="true"
+        android:src="@drawable/bottom_bar_fab"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:elevation="11dp"
-        android:layout_marginBottom="45dp" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/bottom_bar"
+        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_gravity="bottom"
+            android:layout_height="69dp"
+            android:layout_width="match_parent"
+            app:backgroundTint="?attr/colorPrimary"
+            app:contentInsetEnd="0dp"
+            app:contentInsetStart="0dp"
+            app:elevation="16dp"
+            app:fabCradleMargin="10dp"
+            app:fabCradleRoundedCornerRadius="50dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:id="@+id/bottomNavigationView"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    app:backgroundTint="@android:color/transparent"
+                    app:elevation="0dp"
+                    app:itemIconTint="@color/bottom_nav_color"
+                    app:itemTextColor="@color/bottom_nav_color"
+                    app:labelVisibilityMode="labeled"
+                    app:menu="@menu/bttom_nav_menu" />
+
+                <View
+                    android:id="@+id/underline"
+                    android:layout_width="0dp"
+                    android:layout_height="3dp"
+                    android:background="@color/colorAccent"
+                    android:elevation="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintWidth_percent="0.25" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            style="?android:attr/borderlessButtonStyle"
+            android:backgroundTintMode="src_atop"
+            android:id="@+id/fab"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/bottom_bar_fab"
+            app:elevation="0dp"
+            app:backgroundTint="@null"
+            android:alpha="0"
+            app:layout_anchor="@id/bottomAppBar"
+            app:maxImageSize="56dp"
+            app:pressedTranslationZ="0dp" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
